@@ -7,7 +7,6 @@ module.exports = {
             const thoughts = await Thought.find();
             res.json(thoughts);
         } catch (err) {
-            console.log(err);
             res.status(500).json(err);
         }
     },
@@ -29,7 +28,6 @@ module.exports = {
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body);
-            console.log(thought);
             const user = await User.findOneAndUpdate(
                 { _id: req.body.userId },
                 { $push: { thoughts: thought._id } },
@@ -82,7 +80,6 @@ module.exports = {
     // add reaction
     async addReaction(req, res) {
         try {
-            console.log(req.params.thoughtId);
             const thought = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
                 { $push: { reactions: req.body } },
@@ -93,7 +90,6 @@ module.exports = {
             }
             res.json(thought);
         } catch (err) {
-            console.log(err);
             res.status(500).json(err);
         }
     },
