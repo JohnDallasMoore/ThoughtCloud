@@ -103,8 +103,6 @@ For detailed examples and usage demonstrations, please refer to the walkthrough 
 <a id='credits'></a>
 ## Credits
 
-## Credits
-
 This project utilizes the following dependencies:
 
 - [Node.js](https://nodejs.org): A JavaScript runtime environment.
